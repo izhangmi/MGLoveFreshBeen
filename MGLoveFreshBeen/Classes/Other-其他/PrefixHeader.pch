@@ -13,8 +13,28 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import "MGConst.h"
+#import "UIColor+MG.h"
 
 
 
+#ifdef DEBUG // 开发
+#define MGLog(...) NSLog(__VA_ARGS__)
+#else
+#define MGLog(...) // 发布
+#endif
+
+#define MGLogFunc MGLog(@"%s", __func__)  // 打印正在调用的函数名
+
+#define MGRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// MARK: - 常用颜色
+#define MGGlobalBg MGRGBColor(239, 239, 239)
+#define MGNavYellow MGRGBColor(253, 253, 253)
+#define MGTextGrey MGRGBColor(130, 130, 130)
+#define MGTextBlack MGRGBColor(50, 50, 50)
+
+
+#define MGScreenW [UIScreen mainScreen].bounds.size.width
+#define MGScreenH [UIScreen mainScreen].bounds.size.height
 
 #endif /* PrefixHeader_pch */

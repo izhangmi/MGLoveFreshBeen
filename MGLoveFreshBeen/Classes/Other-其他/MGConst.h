@@ -10,4 +10,5 @@
 
 @interface MGConst : NSObject
 
+
 @end
